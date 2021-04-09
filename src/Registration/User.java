@@ -50,12 +50,4 @@ public class User extends Registration
     public String getMobile() {
         return mobile;
     }
-
-
-
-
-
-
-
-
 }

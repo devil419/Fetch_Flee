@@ -25,4 +25,6 @@ public abstract class Registration
     public abstract String getMailAddress() ;
 
     public abstract String getMobile();
+
+
 }

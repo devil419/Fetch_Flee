@@ -1,24 +1,49 @@
 package Registration;
 
-public class Admin extends User
+public class Admin
 {
-    final String masterKey = "admin";
+    final static String masterKey = "admin";
 
+    String adminUsername;
+    String adminPassword;
 
-    public void setUsername(String username) {
-        this.username = username;
+    User[] userObjRef;
+
+    public Admin(int size){
+        userObjRef = new User[size];
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void insertUser(User user){
+        for(int i = 0; i < userObjRef.length; i++){
+            if(userObjRef[i] == null){
+                userObjRef[i] = user;
+                break;
+            }
+        }
+    }
+
+    public void showAllUser(){
+        for(int i = 0; i < userObjRef.length; i++){
+            if(userObjRef[i] != null){
+                System.out.println("Name : "+userObjRef[i].fullName);
+            }
+        }
+    }
+
+    public void setUsername(String adminUsername) {
+        this.adminUsername = adminUsername;
+    }
+
+    public void setPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
     }
 
     public String getUsername() {
-        return username;
+        return adminUsername;
     }
 
     public String getPassword() {
-        return password;
+        return adminPassword;
     }
 
 
