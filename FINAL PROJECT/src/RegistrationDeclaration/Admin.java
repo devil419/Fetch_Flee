@@ -1,4 +1,4 @@
-package Registration;
+package RegistrationDeclaration;
 
 public class Admin extends User
 {
@@ -69,6 +69,12 @@ public class Admin extends User
                 System.out.println("Password : "+ users[i].getPassword());
             }
         }
+    }
+    public boolean passwordValidation(String username){
+        for(int i = 0; i < users.length; i++){
+            if(users[i] != null && users[i].getPassword().equals(username)) return true;
+        }
+        return false;
     }
     public String getMasterKey(){ return masterKey; }
 

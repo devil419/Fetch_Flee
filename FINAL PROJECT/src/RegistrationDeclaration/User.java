@@ -1,4 +1,4 @@
-package Registration;
+package RegistrationDeclaration;
 
 public class User extends Registration
 {

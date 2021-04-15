@@ -1,4 +1,6 @@
-import Registration.*;
+package RegistrationImplementation;
+
+import RegistrationDeclaration.*;
 
 import java.util.Scanner;
 

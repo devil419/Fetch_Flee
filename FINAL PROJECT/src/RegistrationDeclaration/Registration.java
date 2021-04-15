@@ -1,4 +1,4 @@
-package Registration;
+package RegistrationDeclaration;
 
 public abstract class Registration
 {
