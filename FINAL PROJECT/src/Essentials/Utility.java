@@ -15,6 +15,21 @@ public class Utility {
         System.out.print("\n                                                              Press any key to continue >>>> ");
         scanner.nextLine();
     }
+    public static void typeWrite(String text1,String text2)
+    {
+        cls();
+        int i, j;
+        for (j = 0; j < 3; j++) {
+            System.out.print("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t"+text1); //// System.out.print("\n\n\n\n\t\t\t"+text1);
+            for (i = 0; i < text2.length(); i++) {
+                System.out.print(text2.charAt(i));
+                try {
+                    Thread.sleep(100);//0.5s pause between characters
+                } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
+            }
+            cls();
+        }
+    }
 
     public static void greeting(){
         System.out.println("                                                    -----------------------------------------------------------------");
@@ -27,8 +42,7 @@ public class Utility {
         greeting();
         System.out.println("                                                                          1. Login / Registration");
         System.out.println("                                                                          2. Buy a Ticket");
-        System.out.println("                                                                          3. Verify a ticket");
-        System.out.println("                                                                          4. About us");
+        System.out.println("                                                                          3. About Us");
         System.out.print("\n                                                              Choose Your Option ( '0' to exit ) ---------> ");
     }
 

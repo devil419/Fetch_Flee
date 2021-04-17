@@ -1,11 +1,14 @@
 package RegistrationDeclaration;
 
+import MetroTickets.Purchase;
+
 public class Admin extends User
 {
     final String masterKey = "admin";
 
     User[] users = new User[100];
     Admin[] admins = new Admin[10];
+    Purchase[] purchases = new Purchase[24];
 
     public void insertUser(User user){
         for(int i = 0; i < users.length; i++){
