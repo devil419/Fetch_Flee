@@ -151,15 +151,9 @@ public class BuyATicket
         input.nextLine();
         ti.selectAvailableTime(timeChoice);
 
-        System.out.print("                                                              Search for Available Trains?? (Y/N) : ");
-        String findAns = input.nextLine();
-        findAns = findAns.toLowerCase();
-        if (findAns.equals("y")) {
-
-
             /** ******* USING UTILITY CLASS TYPE WRITING EFFECT ******/
 
-            Utility.typeWrite("Searching",".............");
+            Utility.typeWrite("Searching for available trains",".............");
 
 
 
@@ -208,24 +202,23 @@ public class BuyATicket
 
 
                 for (int i = 0; i < member; i++) {
-                    System.out.print("                                                                  Enter seat [" + (i + 1) + "] : ");
-                    seats[i] = input.nextLine();
-                    //seat = seat + " " + seats[i];
+                    for(;;) {
+                        System.out.print("                                                                  Enter seat [" + (i + 1) + "] : ");
+                        seats[i] = input.nextLine();
+                        //seat = seat + " " + seats[i];
 
-
-
-                    //int i = 0;
-
-                    if (seats[i].equals("1C") || seats[i].equals("1c") || seats[i].equals("2F") || seats[i].equals("2f") || seats[i].equals("3D") || seats[i].equals("3d") || seats[i].equals("4H") || seats[i].equals("4h")) {
-                        System.out.println("                                                      Seat Has Already Been Booked. Try Something Else.");
-                        break;
-                        //System.exit(1);
-                    } else {
-                        for (int j = 0; j < member; j++) {
-                            seat = seats[j]+" ";
-                            flag3++;
+                        //int i = 0;
+                        if (seats[i].equals("1C") || seats[i].equals("1c") || seats[i].equals("2F") || seats[i].equals("2f") || seats[i].equals("3D") || seats[i].equals("3d") || seats[i].equals("4H") || seats[i].equals("4h")) {
+                            System.out.println("                                                      Seat Has Already Been Booked. Try Something Else.");
+                            //System.exit(1);
+                        } else {
+                            for (int j = 0; j < member; j++) {
+                                seat = seats[j] + " ";
+                                flag3++;
+                            }
+                            train.setSeatNo(seat);
+                            break;
                         }
-                        train.setSeatNo(seat);
                     }
 
                 }
@@ -238,8 +231,7 @@ public class BuyATicket
             System.out.println("                                                    ---------------------------------------------------");
             System.out.println("                                                   |                 THANKS FOR BOOKING !!              |   ");
             System.out.println("                                                    ---------------------------------------------------");
-        }
-        else{System.exit(0);} ///// While merging in Switch it should break;
+
 
 
         Utility.pause();
@@ -262,7 +254,7 @@ public class BuyATicket
         {
             case 1:
             {
-                System.out.print("                                                              Enter 11 digit BKash Number : +88");
+                System.out.print("                                                              Enter 11 digit BKash Number : +88 ");
                 String num = input.nextLine();
                 System.out.print("                                                              Enter BKash Pin : ");
                 String bkashPin = input.nextLine();
@@ -271,7 +263,7 @@ public class BuyATicket
             }
             case 2:
             {
-                System.out.print("                                                              Enter 11 digit BKash Number : +88");
+                System.out.print("                                                              Enter 11 digit BKash Number : +88 ");
                 String num = input.nextLine();
                 System.out.print("                                                              Enter Rocket Pin : ");
                 String rocketPin = input.nextLine();
@@ -286,7 +278,7 @@ public class BuyATicket
                 break;
             }
             default:{
-                System.out.println("                                                              Please Choose a valid Option..............");
+                System.out.println("                                                              Please Choose a valid Option!!!");
             }
         }
         System.out.println();
@@ -307,15 +299,15 @@ public class BuyATicket
         System.out.println("                                                   |                           PRINT TICKET                          |    ");
         System.out.println("                                                    ----------------------------------------------------------------");
 
-        System.out.print("                                                    Train Name      : "+train.getVehicleName()+"     Seat No        : "); for (int k=0;k<member;k++){ System.out.print(seats[k]+" "); }
-        System.out.println("                                                                                                       " +
-                "\t\t\t\t\tDeparture Date  : "+ti.getTravelDate()+"               Departure Time : "+ti.getAvailableTime());
+        System.out.println("                                                    Train Name      : "+train.getVehicleName()+"     Phone Number : "+ti.getPhoneNumber());
+        System.out.println("                                                    Departure Date  : "+ti.getTravelDate()+"            Departure Time : "+ti.getAvailableTime());
         System.out.println("                                                    Departure From  : "+ti.getStartPoint()+"                 Destination     : "+ti.getEndPoint());
         System.out.println("                                                    AC/Non-AC       : "+train.getAc()+"                    Passengers         : "+ti.getMember());
         System.out.println("                                                    Ticket Price    : "+ti.getTicketPrice()+"                 Total Cost     : "+ti.getTotalPrice());
-        System.out.println("                                                    Class           : "+ti.getClassType()+"        Verification Code : "+ti.getPhoneNumber());
+        System.out.print("                                                    Class           : "+ti.getClassType()+ "           Seat No        : ");
+        for (int k=0;k<member;k++){ System.out.print(seats[k]+" "); }
 
-        System.out.println();
+        System.out.println("\n\n");
         train.showMySeat(seats,member); //// Call to show the seat I've chosen
 
 
