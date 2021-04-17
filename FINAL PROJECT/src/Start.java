@@ -1,8 +1,6 @@
 import Buy_A_Ticket.BuyATicket;
 import Essentials.Utility;
 
-import MetroTickets.Purchase;
-import MetroTickets.*;
 import RegistrationDeclaration.*;
 import RegistrationImplementation.*;
 
@@ -21,7 +19,6 @@ public class Start
         Admin[] adminObject = new Admin[10];
         Admin adminRevoke = new Admin();
         User[] usersObject = new User[100];
-        TicketInfo ticketInfo = new TicketInfo();
 
         /////////////////////////////////////////////////////////////
 
